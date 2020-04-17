@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="xgpixellib">
+      <UniqueIdentifier>{79b52a20-61ee-4bc8-9711-95977d9ecebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgpixellib\engine">
+      <UniqueIdentifier>{2000582f-2522-4d4b-9538-6603f5afa75c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgpixellib\item">
+      <UniqueIdentifier>{d78f6069-54b9-4a28-888f-19a8465b0611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgpixellib\actions">
+      <UniqueIdentifier>{39ae0b42-6c17-4520-b089-f2ea8403ac7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgpixellib\camera">
+      <UniqueIdentifier>{80856848-d195-4047-9776-fa64b36ca0e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgpixellib\framework">
+      <UniqueIdentifier>{9b177d4a-f253-44b8-acb8-8e371fe5b074}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Xg.h">
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgWindow.h">
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgScreenSize.h">
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgPixel.h">
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgKeyboard.h">
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgConstants.h">
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgTransform.h">
+      <Filter>xgpixellib\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgItem.h">
+      <Filter>xgpixellib\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgSprite.h">
+      <Filter>xgpixellib\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgAction.h">
+      <Filter>xgpixellib\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgShader.h">
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgPaper.h">
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgCameraTelemetry.h">
+      <Filter>xgpixellib\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgCamera.h">
+      <Filter>xgpixellib\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgActionMove.h">
+      <Filter>xgpixellib\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgActionSetDirection.h">
+      <Filter>xgpixellib\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgBehavior.h">
+      <Filter>xgpixellib\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgTracker.h">
+      <Filter>xgpixellib\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgState.h">
+      <Filter>xgpixellib\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgFramework.h">
+      <Filter>xgpixellib\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgEvent.h">
+      <Filter>xgpixellib\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgEventGoto.h">
+      <Filter>xgpixellib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgActionNegDirection.h">
+      <Filter>xgpixellib\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgEventKeyboard.h">
+      <Filter>xgpixellib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgActionSpin.h">
+      <Filter>xgpixellib\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgFlipBook.h">
+      <Filter>xgpixellib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgEntity.h">
+      <Filter>xgpixellib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgActionFlipBook.h">
+      <Filter>xgpixellib\actions</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\XgWindow.cpp">
+      <Filter>xgpixellib\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgScreenSize.cpp">
+      <Filter>xgpixellib\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgPixel.cpp">
+      <Filter>xgpixellib\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgKeyboard.cpp">
+      <Filter>xgpixellib\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgTransform.cpp">
+      <Filter>xgpixellib\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgItem.cpp">
+      <Filter>xgpixellib\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgSprite.cpp">
+      <Filter>xgpixellib\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgAction.cpp">
+      <Filter>xgpixellib\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgShader.cpp">
+      <Filter>xgpixellib\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgPaper.cpp">
+      <Filter>xgpixellib\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgCameraTelemetry.cpp">
+      <Filter>xgpixellib\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgCamera.cpp">
+      <Filter>xgpixellib\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgActionMove.cpp">
+      <Filter>xgpixellib\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgActionSetDirection.cpp">
+      <Filter>xgpixellib\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgBehavior.cpp">
+      <Filter>xgpixellib\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgTracker.cpp">
+      <Filter>xgpixellib\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgState.cpp">
+      <Filter>xgpixellib\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgFramework.cpp">
+      <Filter>xgpixellib\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgEvent.cpp">
+      <Filter>xgpixellib\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgEventGoto.cpp">
+      <Filter>xgpixellib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgActionNegDirection.cpp">
+      <Filter>xgpixellib\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgEventKeyboard.cpp">
+      <Filter>xgpixellib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgActionSpin.cpp">
+      <Filter>xgpixellib\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgFlipBook.cpp">
+      <Filter>xgpixellib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgEntity.cpp">
+      <Filter>xgpixellib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgActionFlipBook.cpp">
+      <Filter>xgpixellib\actions</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
