@@ -16,9 +16,9 @@ XgActionSpin::~XgActionSpin()
 /*****************************************************************************
 update()
 *****************************************************************************/
-void XgActionSpin::update(float deltaTime, XgItem *item)
+void XgActionSpin::update(float deltaTime, XgCharacter *character)
 {
 	//transform.turn(dx, dy, dz);
 
-	item->getTransform()->turn(dx, dy, dz);
+	character->getTransform()->turn(dx, dy, dz);
 }

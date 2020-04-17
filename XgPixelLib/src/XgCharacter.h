@@ -3,25 +3,30 @@
 #include "XgTransform.h"
 #include "XgShader.h"
 #include "XgAction.h"
+#include "XgFlipBook.h"
 
 class XgBehavior;
 class XgFramework;
 
-class XgItem
+class XgCharacter
 {
 public:
-	XgItem();
-	virtual ~XgItem();
+	XgCharacter();
+	virtual ~XgCharacter();
 
 public:
-	virtual void create() = 0;
-	virtual void dispose() = 0;
-	virtual void draw() = 0;
+	virtual void create();
+	virtual void dispose();
+	virtual void draw();
 
 	virtual void update(float deltaTime);
 
 public:
+	void add(XgFlipBook *flipBook);
 	void add(XgAction *action);
+
+	void changeFlipBook(int flipBook);
+
 	void fsm(XgFramework *framework);
 
 	void render(XgShader *shader);
@@ -29,6 +34,9 @@ public:
 	XgTransform *getTransform();
 
 private:
+	std::vector<XgFlipBook*> flipBookList;
+	int flipBook;
+
 	XgTransform transform;
 
 	XgFramework *framework;

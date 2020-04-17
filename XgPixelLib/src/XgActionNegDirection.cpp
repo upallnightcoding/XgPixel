@@ -14,7 +14,7 @@ XgActionNegDirection::~XgActionNegDirection()
 /*****************************************************************************
 add() -
 *****************************************************************************/
-void XgActionNegDirection::update(float deltaTime, XgItem *item)
+void XgActionNegDirection::update(float deltaTime, XgCharacter *character)
 {
-	item->getTransform()->flipDirection();
+	character->getTransform()->flipDirection();
 }

@@ -42,9 +42,6 @@
     <ClInclude Include="src\XgTransform.h">
       <Filter>xgpixellib\item</Filter>
     </ClInclude>
-    <ClInclude Include="src\XgItem.h">
-      <Filter>xgpixellib\item</Filter>
-    </ClInclude>
     <ClInclude Include="src\XgSprite.h">
       <Filter>xgpixellib\item</Filter>
     </ClInclude>
@@ -99,11 +96,11 @@
     <ClInclude Include="src\XgFlipBook.h">
       <Filter>xgpixellib</Filter>
     </ClInclude>
-    <ClInclude Include="src\XgEntity.h">
-      <Filter>xgpixellib</Filter>
-    </ClInclude>
-    <ClInclude Include="src\XgActionFlipBook.h">
+    <ClInclude Include="src\XgActionChangeAnimation.h">
       <Filter>xgpixellib\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgCharacter.h">
+      <Filter>xgpixellib\item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -120,9 +117,6 @@
       <Filter>xgpixellib\engine</Filter>
     </ClCompile>
     <ClCompile Include="src\XgTransform.cpp">
-      <Filter>xgpixellib\item</Filter>
-    </ClCompile>
-    <ClCompile Include="src\XgItem.cpp">
       <Filter>xgpixellib\item</Filter>
     </ClCompile>
     <ClCompile Include="src\XgSprite.cpp">
@@ -179,11 +173,11 @@
     <ClCompile Include="src\XgFlipBook.cpp">
       <Filter>xgpixellib</Filter>
     </ClCompile>
-    <ClCompile Include="src\XgEntity.cpp">
-      <Filter>xgpixellib</Filter>
-    </ClCompile>
-    <ClCompile Include="src\XgActionFlipBook.cpp">
+    <ClCompile Include="src\XgActionChangeAnimation.cpp">
       <Filter>xgpixellib\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgCharacter.cpp">
+      <Filter>xgpixellib\item</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

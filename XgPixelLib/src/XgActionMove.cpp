@@ -24,7 +24,7 @@ XgActionMove::~XgActionMove()
 /*****************************************************************************
 update() -
 *****************************************************************************/
-void XgActionMove::update(float deltaTime, XgItem *item)
+void XgActionMove::update(float deltaTime, XgCharacter *character)
 {
-	item->getTransform()->move(0.01f, deltaTime);
+	character->getTransform()->move(0.01f, deltaTime);
 }

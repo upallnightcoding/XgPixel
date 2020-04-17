@@ -1,12 +1,8 @@
 #pragma once
 
 #include "Xg.h"
-#include "XgItem.h"
-#include "XgAction.h"
-//#include "XgBehavior.h"
 
 class XgSprite 
-	: public XgItem
 {
 public:
 	XgSprite(std::string texturePath);

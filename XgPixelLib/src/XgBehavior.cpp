@@ -24,7 +24,7 @@ void XgBehavior::add(XgAction *action)
 /*****************************************************************************
 update() - 
 *****************************************************************************/
-void XgBehavior::update(float deltaTime, XgItem *item)
+void XgBehavior::update(float deltaTime, XgCharacter *item)
 {
 	for (auto action : behaviorList) {
 		action->update(deltaTime, item);

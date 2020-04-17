@@ -12,7 +12,7 @@ public:
 public:
 	void add(XgAction *action);
 
-	void update(float deltaTime, XgItem *item);
+	void update(float deltaTime, XgCharacter *item);
 
 private:
 	std::vector<XgAction*> behaviorList;

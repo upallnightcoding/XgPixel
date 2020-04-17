@@ -1,6 +1,6 @@
 #pragma once
 #include "XgAction.h"
-#include "XgItem.h"
+#include "XgCharacter.h"
 
 class XgActionMove :
 	public XgAction
@@ -11,7 +11,7 @@ public:
 	virtual ~XgActionMove();
 
 public:
-	virtual void update(float deltaTime, XgItem *item);
+	virtual void update(float deltaTime, XgCharacter *item);
 
 private:
 	float dx, dy, dz;

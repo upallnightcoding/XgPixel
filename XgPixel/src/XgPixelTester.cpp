@@ -12,8 +12,7 @@
 #include "XgActionSpin.h"
 #include "XgEventKeyboard.h"
 #include "XgFlipBook.h"
-#include "XgEntity.h"
-#include "XgActionFlipBook.h"
+#include "XgActionChangeAnimation.h"
 
 int main()
 {
@@ -33,7 +32,7 @@ int main()
 	turnState->add(new XgActionSpin(0.0, 180.0, 0.0));
 
 	XgState *idleState = new XgState(IDLE_STATE);
-	idleState->add(new XgActionFlipBook(1));
+	idleState->add(new XgActionChangeAnimation(1));
 	
 	XgFramework *framework = new XgFramework();
 	framework->add(moveState);
@@ -67,10 +66,10 @@ int main()
 	//XgSprite *sprite = new XgSprite("Attack__000.png");
 	//sprite->add(framework);
 
-	XgEntity *entity = new XgEntity();
-	entity->fsm(framework);
-	entity->add(idleFlipBook);
-	entity->add(attackFlipBook);
+	XgCharacter *item = new XgCharacter();
+	item->fsm(framework);
+	item->add(idleFlipBook);
+	item->add(attackFlipBook);
 
 	XgPixel pixel("XgPixel Test Bed", 600, 600);
 	
@@ -79,7 +78,7 @@ int main()
 
 	XgPaper *paper = new XgPaper();
 
-	paper->add(entity);
+	paper->add(item);
 
 	pixel.add(paper);
 

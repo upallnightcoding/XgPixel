@@ -19,11 +19,11 @@ XgActionSetDirection::~XgActionSetDirection()
 /*****************************************************************************
 update() -
 *****************************************************************************/
-void XgActionSetDirection::update(float deltaTime, XgItem *item)
+void XgActionSetDirection::update(float deltaTime, XgCharacter *character)
 {
 	if (firstTime) {
 		firstTime = false;
 
-		item->getTransform()->setDirection(x, y, z);
+		character->getTransform()->setDirection(x, y, z);
 	}
 }

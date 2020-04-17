@@ -1,14 +1,15 @@
-#include "XgItem.h"
+#include "XgCharacter.h"
 
 #include "XgConstants.h"
 
-XgItem::XgItem()
+XgCharacter::XgCharacter()
 {
 	localBehavior = new XgBehavior();
 	framework = NULL;
+	flipBook = 0;
 }
 
-XgItem::~XgItem()
+XgCharacter::~XgCharacter()
 {
 	delete localBehavior;
 
@@ -18,9 +19,55 @@ XgItem::~XgItem()
 }
 
 /*****************************************************************************
+add() -
+*****************************************************************************/
+void XgCharacter::add(XgFlipBook *flipBook)
+{
+	if (flipBook != NULL) {
+		flipBookList.push_back(flipBook);
+	}
+}
+
+/*****************************************************************************
+update()
+*****************************************************************************/
+void XgCharacter::changeFlipBook(int flipBook)
+{
+	this->flipBook = flipBook;
+}
+
+/*****************************************************************************
+animate()
+*****************************************************************************/
+void XgCharacter::dispose()
+{
+
+}
+
+/*****************************************************************************
+animate()
+*****************************************************************************/
+void XgCharacter::draw()
+{
+	if (flipBook != XgConstant::FLIP_BOOK_NULL) {
+		flipBookList.at(flipBook)->draw();
+	}
+}
+
+/*****************************************************************************
+create() -
+*****************************************************************************/
+void XgCharacter::create()
+{
+	for (auto flipBook : flipBookList) {
+		flipBook->create();
+	}
+}
+
+/*****************************************************************************
 render() -
 *****************************************************************************/
-void XgItem::render(XgShader *shader)
+void XgCharacter::render(XgShader *shader)
 {
 	shader->uniform(XgConstant::UNIFORM_TRANSFORM, transform.getTransformMatrix());
 
@@ -30,7 +77,7 @@ void XgItem::render(XgShader *shader)
 /*****************************************************************************
 add() -
 *****************************************************************************/
-void XgItem::add(XgAction *action)
+void XgCharacter::add(XgAction *action)
 {
 	if (action != NULL) {
 		localBehavior->add(action);
@@ -42,7 +89,7 @@ add() - Adds a framework object to an item.  The item can now be manipulated
 by using the states and action of a framework.  If the object framework is
 NULL, it is not added to the item object.
 *****************************************************************************/
-void XgItem::fsm(XgFramework *framework)
+void XgCharacter::fsm(XgFramework *framework)
 {
 	if (framework != NULL) {
 		this->framework = framework;
@@ -52,7 +99,7 @@ void XgItem::fsm(XgFramework *framework)
 /*****************************************************************************
 update() -
 *****************************************************************************/
-void XgItem::update(float deltaTime)
+void XgCharacter::update(float deltaTime)
 {
 	if (framework != NULL) {
 		XgBehavior *behavior = framework->update();
@@ -63,13 +110,15 @@ void XgItem::update(float deltaTime)
 	}
 
 	localBehavior->update(deltaTime, this);
+
+	flipBookList.at(flipBook)->update(deltaTime);
 }
 
 /*****************************************************************************
 getTransform() - Returns a reference to the transform object.  This 
 function should always return a non-NULL object.
 *****************************************************************************/
-XgTransform *XgItem::getTransform()
+XgTransform *XgCharacter::getTransform()
 {
 	return(&transform);
 }

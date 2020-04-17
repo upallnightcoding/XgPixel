@@ -142,7 +142,6 @@
     <ClInclude Include="src\XgCamera.h" />
     <ClInclude Include="src\XgCameraTelemetry.h" />
     <ClInclude Include="src\XgConstants.h" />
-    <ClInclude Include="src\XgEntity.h" />
     <ClInclude Include="src\XgEvent.h" />
     <ClInclude Include="src\XgEventGoto.h" />
     <ClInclude Include="src\XgEventKeyboard.h" />
@@ -158,9 +157,9 @@
     <ClInclude Include="src\XgTracker.h" />
     <ClInclude Include="src\XgTransform.h" />
     <ClInclude Include="src\XgWindow.h" />
-    <ClInclude Include="src\XgItem.h" />
+    <ClInclude Include="src\XgCharacter.h" />
     <ClInclude Include="src\XgActionSetDirection.h" />
-    <ClInclude Include="src\XgActionFlipBook.h" />
+    <ClInclude Include="src\XgActionChangeAnimation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\XgAction.cpp" />
@@ -170,7 +169,6 @@
     <ClCompile Include="src\XgBehavior.cpp" />
     <ClCompile Include="src\XgCamera.cpp" />
     <ClCompile Include="src\XgCameraTelemetry.cpp" />
-    <ClCompile Include="src\XgEntity.cpp" />
     <ClCompile Include="src\XgEvent.cpp" />
     <ClCompile Include="src\XgEventGoto.cpp" />
     <ClCompile Include="src\XgEventKeyboard.cpp" />
@@ -186,9 +184,9 @@
     <ClCompile Include="src\XgTracker.cpp" />
     <ClCompile Include="src\XgTransform.cpp" />
     <ClCompile Include="src\XgWindow.cpp" />
-    <ClCompile Include="src\XgItem.cpp" />
+    <ClCompile Include="src\XgCharacter.cpp" />
     <ClCompile Include="src\XgActionSetDirection.cpp" />
-    <ClCompile Include="src\XgActionFlipBook.cpp" />
+    <ClCompile Include="src\XgActionChangeAnimation.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
