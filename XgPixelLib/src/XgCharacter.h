@@ -17,7 +17,6 @@ public:
 public:
 	virtual void create();
 	virtual void dispose();
-	virtual void draw();
 
 	virtual void update(float deltaTime);
 
@@ -27,7 +26,7 @@ public:
 
 	void changeFlipBook(int flipBook);
 
-	void fsm(XgFramework *framework);
+	void add(XgFramework *framework);
 
 	void render(XgShader *shader);
 

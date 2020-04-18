@@ -145,6 +145,11 @@ void XgTransform::scale(float value)
 	scale(value, value, value);
 }
 
+void XgTransform::scale(float x, float y)
+{
+	scale(x, y, 1.0);
+}
+
 /*****************************************************************************
 getPosition() - Returns the model position of the current object.
 *****************************************************************************/

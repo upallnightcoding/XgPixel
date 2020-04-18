@@ -1,15 +1,59 @@
 #include "XgFlipBook.h"
 
 
-
-XgFlipBook::XgFlipBook()
+XgFlipBook::XgFlipBook(float speed)
 {
-	
-}
+	this->xScale = 1.0;
+	this->yScale = 1.0;
 
+	this->speed = speed;
+
+	flipBookId = new int();
+}
 
 XgFlipBook::~XgFlipBook()
 {
+}
+
+/*****************************************************************************
+setId() -
+*****************************************************************************/
+void XgFlipBook::setId(int flipBookId)
+{
+	*(this->flipBookId) = flipBookId;
+}
+
+/*****************************************************************************
+getId() -
+*****************************************************************************/
+int *XgFlipBook::getId()
+{
+	return(flipBookId);
+}
+
+/*****************************************************************************
+setScale() -
+*****************************************************************************/
+void XgFlipBook::setScale(float scale)
+{
+	xScale = yScale = scale;
+}
+
+/*****************************************************************************
+setScale() -
+*****************************************************************************/
+void XgFlipBook::setScale(float xScale, float yScale)
+{
+	this->xScale = xScale;
+	this->yScale = yScale;
+}
+
+/*****************************************************************************
+setScale() -
+*****************************************************************************/
+void XgFlipBook::setScale(XgTransform *transform)
+{
+	return(transform->scale(xScale, yScale));
 }
 
 /*****************************************************************************
@@ -34,12 +78,12 @@ void XgFlipBook::create()
 	nSprites = flipBookList.size();
 	currentSprite = 0;
 
-	speed = 60 / 30;
+	animationSpeed = 60 / speed;
 	speedBuffer = 0.0;
 }
 
 /*****************************************************************************
-animate() - Executes the animation of a flipbook.  The transformation of the
+draw() - Executes the animation of a flipbook.  The transformation of the
 object is set first via a uniform and the current sprite of the flipbook is
 drawn with the current shader.
 *****************************************************************************/
@@ -55,7 +99,7 @@ void XgFlipBook::update(float deltaTime)
 {
 	speedBuffer += deltaTime;
 
-	if (speedBuffer > speed) {
+	if (speedBuffer > animationSpeed) {
 		currentSprite = ++currentSprite % nSprites;
 		speedBuffer = 0.0;
 	}

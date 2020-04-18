@@ -1,6 +1,7 @@
 #pragma once
 
 #include "XgSprite.h"
+#include "XgTransform.h"
 
 /*****************************************************************************
 XgFlipBook
@@ -8,7 +9,7 @@ XgFlipBook
 class XgFlipBook
 {
 public:
-	XgFlipBook();
+	XgFlipBook(float speed);
 	virtual ~XgFlipBook();
 
 public:
@@ -17,6 +18,13 @@ public:
 	void draw();
 	void create();
 	void update(float deltaTime);
+
+	void setScale(float scale);
+	void setScale(float xScale, float yScale);
+	void setScale(XgTransform *transform);
+
+	void setId(int flipBookId);
+	int *getId();
 
 private:
 	// List of animation images
@@ -29,8 +37,13 @@ private:
 	int currentSprite;
 
 	// Current speed of animation
-	float speed;
+	float animationSpeed;
 	float speedBuffer;
+	float speed;
+
+	float xScale, yScale;
+
+	int *flipBookId;
 };
 
 

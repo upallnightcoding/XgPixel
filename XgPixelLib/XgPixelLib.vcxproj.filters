@@ -102,6 +102,9 @@
     <ClInclude Include="src\XgCharacter.h">
       <Filter>xgpixellib\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\XgPixelTestBed.h">
+      <Filter>xgpixellib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\XgWindow.cpp">
@@ -178,6 +181,9 @@
     </ClCompile>
     <ClCompile Include="src\XgCharacter.cpp">
       <Filter>xgpixellib\item</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgPixelTestBed.cpp">
+      <Filter>xgpixellib</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

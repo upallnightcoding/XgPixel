@@ -6,14 +6,13 @@ class XgActionMove :
 	public XgAction
 {
 public:
-	XgActionMove(float dx, float dy);
-	XgActionMove(float dx, float dy, float dz);
+	XgActionMove(float speed);
 	virtual ~XgActionMove();
 
 public:
 	virtual void update(float deltaTime, XgCharacter *item);
 
 private:
-	float dx, dy, dz;
+	float speed;
 };
 

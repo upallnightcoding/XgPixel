@@ -2,7 +2,7 @@
 
 #include "XgConstants.h"
 
-XgActionChangeAnimation::XgActionChangeAnimation(int flipBook)
+XgActionChangeAnimation::XgActionChangeAnimation(XgFlipBook *flipBook)
 {
 	this->flipBook = flipBook;
 }
@@ -17,5 +17,5 @@ update() -
 *****************************************************************************/
 void XgActionChangeAnimation::update(float deltaTime, XgCharacter *item)
 {
-	item->changeFlipBook(flipBook);
+	item->changeFlipBook(*flipBook->getId());
 }

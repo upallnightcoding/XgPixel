@@ -24,6 +24,8 @@ add() -
 void XgCharacter::add(XgFlipBook *flipBook)
 {
 	if (flipBook != NULL) {
+		flipBook->setId(flipBookList.size());
+
 		flipBookList.push_back(flipBook);
 	}
 }
@@ -45,16 +47,6 @@ void XgCharacter::dispose()
 }
 
 /*****************************************************************************
-animate()
-*****************************************************************************/
-void XgCharacter::draw()
-{
-	if (flipBook != XgConstant::FLIP_BOOK_NULL) {
-		flipBookList.at(flipBook)->draw();
-	}
-}
-
-/*****************************************************************************
 create() -
 *****************************************************************************/
 void XgCharacter::create()
@@ -69,9 +61,13 @@ render() -
 *****************************************************************************/
 void XgCharacter::render(XgShader *shader)
 {
+	flipBookList.at(flipBook)->setScale(&transform);
+
 	shader->uniform(XgConstant::UNIFORM_TRANSFORM, transform.getTransformMatrix());
 
-	draw();
+	if (flipBook != XgConstant::FLIP_BOOK_NULL) {
+		flipBookList.at(flipBook)->draw();
+	}
 }
 
 /*****************************************************************************
@@ -89,7 +85,7 @@ add() - Adds a framework object to an item.  The item can now be manipulated
 by using the states and action of a framework.  If the object framework is
 NULL, it is not added to the item object.
 *****************************************************************************/
-void XgCharacter::fsm(XgFramework *framework)
+void XgCharacter::add(XgFramework *framework)
 {
 	if (framework != NULL) {
 		this->framework = framework;

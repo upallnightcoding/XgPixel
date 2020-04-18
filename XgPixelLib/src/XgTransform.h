@@ -20,8 +20,11 @@ public:
 	void flipDirection();
 
 	void turn(float x, float y, float z);
-	void scale(float x, float y, float z);
+
 	void scale(float value);
+	void scale(float x, float y);
+	void scale(float x, float y, float z);
+	
 	void position(float x, float y, float z);
 	void position(glm::vec3 point);
 	void paint(glm::vec4 &colourObj);

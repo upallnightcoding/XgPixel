@@ -29,8 +29,8 @@ public:
 
 private:
 	std::string pName;
-	XgBehavior *pBehavior;
 	std::vector<XgEvent*> pEventList;
+	XgBehavior *pBehavior;
 };
 
 #include "XgBehavior.h"
