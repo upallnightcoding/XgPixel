@@ -8,14 +8,20 @@
 
 int main()
 {
+	// (1) Define the 2D engine
+	//-------------------------
+	XgPixel pixel("XgPixel Test Bed", 400, 400);
 	
+	// (2) Create 2D paper object container
+	//-------------------------------------
+	XgPaper *paper = XgPixelTestBed::characterIdle();
 
-	XgPixel pixel("XgPixel Test Bed", 1000, 600);
-	
-	XgPaper *paper = XgPixelTestBed::CharacterAttack();
-
+	// (3) Add the 2D object into the engine
+	//--------------------------------------
 	pixel.add(paper);
 
+	// (4) Start the engine animation
+	//-------------------------------
 	pixel.startAnimation();
 }
 

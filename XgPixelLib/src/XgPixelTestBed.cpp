@@ -20,7 +20,41 @@ XgPixelTestBed::~XgPixelTestBed()
 {
 }
 
-XgPaper *XgPixelTestBed::CharacterAttack()
+XgPaper *XgPixelTestBed::characterIdle()
+{
+	std::string IDLE_STATE = "IDLE";
+
+	XgFlipBook *idleFlipBook = new XgFlipBook(30.0f);
+	idleFlipBook->setScale(0.5f, 0.8f);
+	idleFlipBook->add(new XgSprite("Idle__000.png"));
+	idleFlipBook->add(new XgSprite("Idle__001.png"));
+	idleFlipBook->add(new XgSprite("Idle__002.png"));
+	idleFlipBook->add(new XgSprite("Idle__003.png"));
+	idleFlipBook->add(new XgSprite("Idle__004.png"));
+	idleFlipBook->add(new XgSprite("Idle__005.png"));
+	idleFlipBook->add(new XgSprite("Idle__006.png"));
+	idleFlipBook->add(new XgSprite("Idle__007.png"));
+	idleFlipBook->add(new XgSprite("Idle__008.png"));
+	idleFlipBook->add(new XgSprite("Idle__009.png"));
+
+	XgState *idleState = new XgState(IDLE_STATE);
+	idleState->add(new XgActionChangeAnimation(idleFlipBook));
+
+	XgFramework *framework = new XgFramework();
+	framework->add(idleState);
+
+	XgCharacter *character = new XgCharacter();
+	character->add(framework);
+	character->add(idleFlipBook);
+
+	XgPaper *paper = new XgPaper();
+
+	paper->add(character);
+
+	return(paper);
+}
+
+XgPaper *XgPixelTestBed::characterAttack()
 {
 	std::string MOVE_STATE = "MOVE";
 	std::string TURN_STATE = "TURN";

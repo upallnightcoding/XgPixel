@@ -9,6 +9,7 @@ public:
 	virtual ~XgPixelTestBed();
 
 public:
-	static XgPaper *CharacterAttack();
+	static XgPaper *characterAttack();
+	static XgPaper *characterIdle();
 };
 
