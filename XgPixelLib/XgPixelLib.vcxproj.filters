@@ -19,6 +19,12 @@
     <Filter Include="xgpixellib\framework">
       <UniqueIdentifier>{9b177d4a-f253-44b8-acb8-8e371fe5b074}</UniqueIdentifier>
     </Filter>
+    <Filter Include="xgpixellib\events">
+      <UniqueIdentifier>{df2f40b8-0b83-4556-8728-6529a07284b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xgpixellib\shader">
+      <UniqueIdentifier>{94e884ca-a4d6-4085-97f8-5b63b289c222}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Xg.h">
@@ -47,9 +53,6 @@
     </ClInclude>
     <ClInclude Include="src\XgAction.h">
       <Filter>xgpixellib\actions</Filter>
-    </ClInclude>
-    <ClInclude Include="src\XgShader.h">
-      <Filter>xgpixellib\engine</Filter>
     </ClInclude>
     <ClInclude Include="src\XgPaper.h">
       <Filter>xgpixellib\engine</Filter>
@@ -81,14 +84,8 @@
     <ClInclude Include="src\XgEvent.h">
       <Filter>xgpixellib\framework</Filter>
     </ClInclude>
-    <ClInclude Include="src\XgEventGoto.h">
-      <Filter>xgpixellib</Filter>
-    </ClInclude>
     <ClInclude Include="src\XgActionNegDirection.h">
       <Filter>xgpixellib\actions</Filter>
-    </ClInclude>
-    <ClInclude Include="src\XgEventKeyboard.h">
-      <Filter>xgpixellib</Filter>
     </ClInclude>
     <ClInclude Include="src\XgActionSpin.h">
       <Filter>xgpixellib\actions</Filter>
@@ -102,8 +99,21 @@
     <ClInclude Include="src\XgCharacter.h">
       <Filter>xgpixellib\item</Filter>
     </ClInclude>
+    <ClInclude Include="src\XgEventGoto.h">
+      <Filter>xgpixellib\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgEventKeyboard.h">
+      <Filter>xgpixellib\events</Filter>
+    </ClInclude>
     <ClInclude Include="src\XgPixelTestBed.h">
-      <Filter>xgpixellib</Filter>
+      <Filter>xgpixellib\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgBackGround.h" />
+    <ClInclude Include="src\XgShader.h">
+      <Filter>xgpixellib\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XgShaderObject.h">
+      <Filter>xgpixellib\shader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -127,9 +137,6 @@
     </ClCompile>
     <ClCompile Include="src\XgAction.cpp">
       <Filter>xgpixellib\actions</Filter>
-    </ClCompile>
-    <ClCompile Include="src\XgShader.cpp">
-      <Filter>xgpixellib\engine</Filter>
     </ClCompile>
     <ClCompile Include="src\XgPaper.cpp">
       <Filter>xgpixellib\engine</Filter>
@@ -161,14 +168,8 @@
     <ClCompile Include="src\XgEvent.cpp">
       <Filter>xgpixellib\framework</Filter>
     </ClCompile>
-    <ClCompile Include="src\XgEventGoto.cpp">
-      <Filter>xgpixellib</Filter>
-    </ClCompile>
     <ClCompile Include="src\XgActionNegDirection.cpp">
       <Filter>xgpixellib\actions</Filter>
-    </ClCompile>
-    <ClCompile Include="src\XgEventKeyboard.cpp">
-      <Filter>xgpixellib</Filter>
     </ClCompile>
     <ClCompile Include="src\XgActionSpin.cpp">
       <Filter>xgpixellib\actions</Filter>
@@ -182,8 +183,21 @@
     <ClCompile Include="src\XgCharacter.cpp">
       <Filter>xgpixellib\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\XgEventGoto.cpp">
+      <Filter>xgpixellib\events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgEventKeyboard.cpp">
+      <Filter>xgpixellib\events</Filter>
+    </ClCompile>
     <ClCompile Include="src\XgPixelTestBed.cpp">
-      <Filter>xgpixellib</Filter>
+      <Filter>xgpixellib\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgBackGround.cpp" />
+    <ClCompile Include="src\XgShader.cpp">
+      <Filter>xgpixellib\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XgShaderObject.cpp">
+      <Filter>xgpixellib\shader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,12 +1,16 @@
 #include "XgCharacter.h"
 
 #include "XgConstants.h"
+#include "XgShaderObject.h"
 
 XgCharacter::XgCharacter()
 {
 	localBehavior = new XgBehavior();
+	shaderObject = new XgShaderObject(XgConstant::SPRITE_SHADER);
+	collisionShader = new XgShaderObject("collision.shader");
+
 	framework = NULL;
-	flipBook = 0;
+	flipBook = XgConstant::NO_FLIP_BOOK;
 }
 
 XgCharacter::~XgCharacter()
@@ -54,18 +58,33 @@ void XgCharacter::create()
 	for (auto flipBook : flipBookList) {
 		flipBook->create();
 	}
+
+	shaderObject->create();
+
+	collisionShader->create();
+
+	flipBook = 0;
 }
 
 /*****************************************************************************
-render() -
+render() - Renders the current image in the active flip book.  The scale of 
+the image is set via the transform and the shader is then applied.  
 *****************************************************************************/
-void XgCharacter::render(XgShader *shader)
+void XgCharacter::render(XgCamera *camera, XgScreenSize *screenSize)
 {
-	flipBookList.at(flipBook)->setScale(&transform);
+	if (flipBook != XgConstant::NO_FLIP_BOOK) {
+		//flipBookList.at(flipBook)->setScale(&transform);
 
-	shader->uniform(XgConstant::UNIFORM_TRANSFORM, transform.getTransformMatrix());
+		float hwRatio = flipBookList.at(flipBook)->getHeightWidthRatio();
 
-	if (flipBook != XgConstant::FLIP_BOOK_NULL) {
+		flipBookList.at(flipBook)->setScale(1.0, hwRatio);
+
+		collisionShader->apply(camera, screenSize, transform);
+
+		flipBookList.at(flipBook)->collision();
+
+		shaderObject->apply(camera, screenSize, transform);
+
 		flipBookList.at(flipBook)->draw();
 	}
 }

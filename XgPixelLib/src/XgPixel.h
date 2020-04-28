@@ -24,9 +24,5 @@ private:
 private:
 	XgPaper *paper;
 	XgCamera camera;
-
-	XgShader *shader;
-
-	//XgRenderContext *renderContext;
 };
 

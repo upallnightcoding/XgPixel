@@ -10,6 +10,7 @@
 #include "XgEventKeyboard.h"
 #include "XgFlipBook.h"
 #include "XgActionChangeAnimation.h"
+#include "XgBackGround.h"
 
 XgPixelTestBed::XgPixelTestBed()
 {
@@ -23,6 +24,9 @@ XgPixelTestBed::~XgPixelTestBed()
 XgPaper *XgPixelTestBed::characterIdle()
 {
 	std::string IDLE_STATE = "IDLE";
+
+	XgBackGround *bg = new XgBackGround("BG.png");
+	bg->setScale(5.0);
 
 	XgFlipBook *idleFlipBook = new XgFlipBook(30.0f);
 	idleFlipBook->setScale(0.5f, 0.8f);
@@ -48,9 +52,9 @@ XgPaper *XgPixelTestBed::characterIdle()
 	character->add(idleFlipBook);
 
 	XgPaper *paper = new XgPaper();
-
 	paper->add(character);
-
+	//paper->add(bg);				// Background has to be last character added
+	
 	return(paper);
 }
 

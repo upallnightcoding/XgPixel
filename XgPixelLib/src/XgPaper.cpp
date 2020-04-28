@@ -16,12 +16,12 @@ XgPaper::~XgPaper()
 /*****************************************************************************
 animate()
 *****************************************************************************/
-void XgPaper::animate(XgShader *shader)
+void XgPaper::animate(XgCamera *camera, XgScreenSize *screenSize)
 {
 	// Animate all sprites that are on the paper
 	//------------------------------------------
 	for (auto item : itemList) {
-		item->render(shader);
+		item->render(camera, screenSize);
 	}
 }
 

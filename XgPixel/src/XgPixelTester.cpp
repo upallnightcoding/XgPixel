@@ -10,7 +10,7 @@ int main()
 {
 	// (1) Define the 2D engine
 	//-------------------------
-	XgPixel pixel("XgPixel Test Bed", 400, 400);
+	XgPixel pixel("XgPixel Test Bed", 800, 400);
 	
 	// (2) Create 2D paper object container
 	//-------------------------------------

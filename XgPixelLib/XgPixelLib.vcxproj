@@ -161,6 +161,8 @@
     <ClInclude Include="src\XgActionSetDirection.h" />
     <ClInclude Include="src\XgActionChangeAnimation.h" />
     <ClInclude Include="src\XgPixelTestBed.h" />
+    <ClInclude Include="src\XgBackGround.h" />
+    <ClInclude Include="src\XgShaderObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\XgAction.cpp" />
@@ -189,6 +191,8 @@
     <ClCompile Include="src\XgActionSetDirection.cpp" />
     <ClCompile Include="src\XgActionChangeAnimation.cpp" />
     <ClCompile Include="src\XgPixelTestBed.cpp" />
+    <ClCompile Include="src\XgBackGround.cpp" />
+    <ClCompile Include="src\XgShaderObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,6 +16,17 @@ XgSprite::~XgSprite()
 
 }
 
+/*****************************************************************************
+getHeightWidthRatio() -
+*****************************************************************************/
+float XgSprite::getHeightWidthRatio()
+{
+	return((float) height / (float) width);
+}
+
+/*****************************************************************************
+create() - 
+*****************************************************************************/
 void XgSprite::create()
 {
 	dataFormat();
@@ -40,15 +51,18 @@ void XgSprite::dataFormat()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-	// position attribute
+	// Position Attribute
+	//-------------------
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	// color attribute
+	// Color Attribute
+	//----------------
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
-	// texture coord attribute
+	// Texture Corrdinate Attribute
+	//-----------------------------
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 }
@@ -56,7 +70,6 @@ void XgSprite::dataFormat()
 /******************************************************************************
 create() -
 ******************************************************************************/
-
 void XgSprite::loadTexture()
 {
 	// Generate Textures
@@ -78,7 +91,7 @@ void XgSprite::loadTexture()
 
 	// Load image, create texture and generate mipmaps
 	//------------------------------------------------
-	int width, height, nrChannels;
+	int nrChannels;
 	unsigned char *data = stbi_load(imagePath.c_str(), &width, &height, &nrChannels, STBI_rgb_alpha);
 
 	if (data) {
@@ -92,7 +105,7 @@ void XgSprite::loadTexture()
 }
 
 /******************************************************************************
-create() -
+draw() -
 ******************************************************************************/
 void XgSprite::draw()
 {
@@ -101,6 +114,16 @@ void XgSprite::draw()
 	glBindVertexArray(vao);
 
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+}
+
+/******************************************************************************
+collision() -
+******************************************************************************/
+void XgSprite::collision()
+{
+	glBindVertexArray(vao);
+
+	glDrawArrays(GL_LINE_LOOP, 0, 4);
 }
 
 /*****************************************************************************

@@ -16,15 +16,18 @@ public:
 	void add(XgSprite *sprite);
 	
 	void draw();
+	void collision();
 	void create();
 	void update(float deltaTime);
 
-	void setScale(float scale);
+	void setScale(float value);
 	void setScale(float xScale, float yScale);
 	void setScale(XgTransform *transform);
 
 	void setId(int flipBookId);
 	int *getId();
+
+	float getHeightWidthRatio();
 
 private:
 	// List of animation images

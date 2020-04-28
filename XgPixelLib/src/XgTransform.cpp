@@ -119,13 +119,14 @@ void XgTransform::position(float x, float y, float z)
 }
 
 /******************************************************************************
-size() -
+scale() - Multiplies the current scale values by new scales values.  This 
+allows scaling to happen at multiple levels.
 ******************************************************************************/
 void XgTransform::scale(float x, float y, float z)
 {
-	scaleObj.x = x;
-	scaleObj.y = y;
-	scaleObj.z = z;
+	scaleObj.x *= x;
+	scaleObj.y *= y;
+	scaleObj.z *= z;
 }
 
 /******************************************************************************

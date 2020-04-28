@@ -3,6 +3,8 @@
 #include "Xg.h"
 #include "XgCharacter.h"
 #include "XgShader.h"
+#include "XgCamera.h"
+#include "XgScreenSize.h"
 
 class XgPaper
 {
@@ -13,7 +15,7 @@ public:
 public:
 	void add(XgCharacter *item);
 
-	void animate(XgShader *shader);
+	void animate(XgCamera *camera, XgScreenSize *screenSize);
 	void update(float deltaTime);
 	void create();
 

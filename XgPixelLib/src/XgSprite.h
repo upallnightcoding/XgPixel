@@ -13,6 +13,10 @@ public:
 	virtual void draw();
 	virtual void create();
 
+	virtual void collision();
+
+	float getHeightWidthRatio();
+
 private:
 	void dataFormat();
 	void loadTexture();
@@ -23,18 +27,20 @@ private:
 	unsigned int vbo, vao, ebo;
 
 	unsigned int texture;
+
+	int width, height;
 	
 	float vertices[32] = {
-		// positions          // colors           // texture coords
-		 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
-		 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
-		-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
-		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // top left 
+		// Positions          // Colors           // Texture Coordinates
+		 1.0f,  1.0f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // Top Right
+		 1.0f, -1.0f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // Bottom Right
+		-1.0f, -1.0f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // Bottom Left
+		-1.0f,  1.0f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // Top Left 
 	};
 
 	unsigned int indices[6] = {
-		0, 1, 3, // first triangle
-		1, 2, 3  // second triangle
+		0, 1, 3, // First Triangle
+		1, 2, 3  // Second Triangle
 	};
 };
 

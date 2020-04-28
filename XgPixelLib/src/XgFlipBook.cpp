@@ -34,9 +34,9 @@ int *XgFlipBook::getId()
 /*****************************************************************************
 setScale() -
 *****************************************************************************/
-void XgFlipBook::setScale(float scale)
+void XgFlipBook::setScale(float value)
 {
-	xScale = yScale = scale;
+	setScale(value, value);
 }
 
 /*****************************************************************************
@@ -44,8 +44,8 @@ setScale() -
 *****************************************************************************/
 void XgFlipBook::setScale(float xScale, float yScale)
 {
-	this->xScale = xScale;
-	this->yScale = yScale;
+	this->xScale *= xScale;
+	this->yScale *= yScale;
 }
 
 /*****************************************************************************
@@ -90,6 +90,22 @@ drawn with the current shader.
 void XgFlipBook::draw()
 {
 	flipBookList.at(currentSprite)->draw();
+}
+
+/*****************************************************************************
+getHeightWidthRatio() -
+*****************************************************************************/
+float XgFlipBook::getHeightWidthRatio()
+{
+	return(flipBookList.at(currentSprite)->getHeightWidthRatio());
+}
+
+/*****************************************************************************
+collision() -
+*****************************************************************************/
+void XgFlipBook::collision()
+{
+	flipBookList.at(currentSprite)->collision();
 }
 
 /*****************************************************************************

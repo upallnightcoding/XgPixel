@@ -31,5 +31,5 @@ namespace XgConstant {
 
 	const std::string EMPTY_STRING = "";
 
-	const int FLIP_BOOK_NULL = (-1);
+	const int NO_FLIP_BOOK = (-1);
 }

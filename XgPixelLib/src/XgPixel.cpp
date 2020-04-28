@@ -1,18 +1,17 @@
 #include "XgPixel.h"
 
 #include "XgConstants.h"
+#include "XgShaderObject.h"
 
 XgPixel::XgPixel(std::string title, int screenWidth, int screenHeight)
 	: XgWindow(title, screenWidth, screenHeight)
 {
-	shader = new XgShader(XgConstant::SPRITE_SHADER);
+
 }
 
 XgPixel::~XgPixel()
 {
 	delete paper;
-
-	delete shader;
 }
 
 /*****************************************************************************
@@ -25,16 +24,6 @@ void XgPixel::initRender(GLFWwindow* window)
 	camera.setPosition(5.0);
 
 	camera.create(window);
-
-	shader->create();
-
-	shader->use();
-
-	shader->uniform("u_View", camera.getView());
-
-	shader->uniform("u_Projection", screenSize->getPerspective());
-
-	//renderContext = new XgRenderContext();
 }
 
 /*****************************************************************************
@@ -42,9 +31,15 @@ render()
 *****************************************************************************/
 void XgPixel::renderScreen(float &deltaTime, int &fps)
 {
+	//shader->use();
+
+	//shader->uniform("u_View", camera.getView());
+
+	//shader->uniform("u_Projection", screenSize->getPerspective());
+
 	updateDeltaTime(deltaTime, fps);
 
-	paper->animate(shader);
+	paper->animate(&camera, screenSize);
 }
 
 /*****************************************************************************

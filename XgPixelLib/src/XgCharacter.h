@@ -4,6 +4,7 @@
 #include "XgShader.h"
 #include "XgAction.h"
 #include "XgFlipBook.h"
+#include "XgCamera.h"
 
 class XgBehavior;
 class XgFramework;
@@ -28,7 +29,7 @@ public:
 
 	void add(XgFramework *framework);
 
-	void render(XgShader *shader);
+	void render(XgCamera *camera, XgScreenSize *screenSize);
 
 	XgTransform *getTransform();
 
@@ -41,6 +42,9 @@ private:
 	XgFramework *framework;
 
 	XgBehavior *localBehavior;
+
+	XgShader *shaderObject;
+	XgShader *collisionShader;
 };
 
 #include "XgBehavior.h"

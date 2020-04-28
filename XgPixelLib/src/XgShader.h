@@ -2,7 +2,7 @@
 
 #include "Xg.h"
 #include "XgTransform.h"
-//#include "XgCamera.h"
+#include "XgCamera.h"
 //#include "XgLighting.h"
 #include "XgScreenSize.h"
 
@@ -16,6 +16,8 @@ public:
 	virtual ~XgShader();
 
 public:
+	virtual void apply(XgCamera *camera, XgScreenSize *screenSize, XgTransform &transform) = 0;
+
 	void use();
 	void create();
 
