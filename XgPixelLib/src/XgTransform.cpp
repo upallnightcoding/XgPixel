@@ -35,7 +35,7 @@ glm::mat4 XgTransform::getTransformMatrix()
 
 	// Set the transform tranlation
 	//-----------------------------
-	transform = translate(transform, translateObj);
+	transform = glm::translate(transform, translateObj);
 
 	// Set the transforma rotation (x, y z)
 	//-------------------------------------
@@ -124,9 +124,9 @@ allows scaling to happen at multiple levels.
 ******************************************************************************/
 void XgTransform::scale(float x, float y, float z)
 {
-	scaleObj.x *= x;
-	scaleObj.y *= y;
-	scaleObj.z *= z;
+	scaleObj.x = x;
+	scaleObj.y = y;
+	scaleObj.z = z;
 }
 
 /******************************************************************************
@@ -146,6 +146,9 @@ void XgTransform::scale(float value)
 	scale(value, value, value);
 }
 
+/*****************************************************************************
+scale() -
+*****************************************************************************/
 void XgTransform::scale(float x, float y)
 {
 	scale(x, y, 1.0);

@@ -10,11 +10,11 @@ int main()
 {
 	// (1) Define the 2D engine
 	//-------------------------
-	XgPixel pixel("XgPixel Test Bed", 800, 400);
+	XgPixel pixel("XgPixel Test Bed", 600, 600);
 	
 	// (2) Create 2D paper object container
 	//-------------------------------------
-	XgPaper *paper = XgPixelTestBed::characterIdle();
+	XgPaper *paper = XgPixelTestBed::characterTwoIdle();
 
 	// (3) Add the 2D object into the engine
 	//--------------------------------------

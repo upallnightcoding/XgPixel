@@ -33,6 +33,8 @@ public:
 
 	XgTransform *getTransform();
 
+	void setScale(float xScale, float yScale);
+
 private:
 	std::vector<XgFlipBook*> flipBookList;
 	int flipBook;

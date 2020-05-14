@@ -20,18 +20,18 @@ public:
 	void create();
 	void update(float deltaTime);
 
-	void setScale(float value);
-	void setScale(float xScale, float yScale);
-	void setScale(XgTransform *transform);
-
 	void setId(int flipBookId);
 	int *getId();
 
+	void worldCord(XgTransform &transform);
+
 	float getHeightWidthRatio();
+
+	void bindVao();
 
 private:
 	// List of animation images
-	std::vector<XgSprite*> flipBookList;
+	std::vector<XgSprite*> spriteList;
 
 	// Number of images in the flipbook
 	int nSprites;
@@ -44,9 +44,7 @@ private:
 	float speedBuffer;
 	float speed;
 
-	float xScale, yScale;
-
-	int *flipBookId;
+	int *spriteId;
 };
 
 

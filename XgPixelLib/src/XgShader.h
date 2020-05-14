@@ -5,6 +5,7 @@
 #include "XgCamera.h"
 //#include "XgLighting.h"
 #include "XgScreenSize.h"
+#include "XgFlipBook.h"
 
 /*****************************************************************************
 class XgShader
@@ -16,7 +17,7 @@ public:
 	virtual ~XgShader();
 
 public:
-	virtual void apply(XgCamera *camera, XgScreenSize *screenSize, XgTransform &transform) = 0;
+	virtual void apply(XgFlipBook *flipBook, XgCamera *camera, XgScreenSize *screenSize, XgTransform &transform) = 0;
 
 	void use();
 	void create();

@@ -17,18 +17,4 @@ XgBackGround::~XgBackGround()
 	delete flipBook;
 }
 
-/*****************************************************************************
-setScale() -
-*****************************************************************************/
-void XgBackGround::setScale(float xScale, float yScale)
-{
-	flipBook->setScale(xScale, yScale);
-}
 
-/*****************************************************************************
-setScale() -
-*****************************************************************************/
-void XgBackGround::setScale(float value)
-{
-	flipBook->setScale(value);
-}

@@ -13,13 +13,20 @@ XgShaderObject::~XgShaderObject()
 {
 }
 
-void XgShaderObject::apply(XgCamera *camera, XgScreenSize *screenSize, XgTransform &transform)
+void XgShaderObject::apply(
+	XgFlipBook *flipBook, 
+	XgCamera *camera, 
+	XgScreenSize *screenSize, 
+	XgTransform &transform
+)
 {
+	flipBook->worldCord(transform);
+
 	use();
 
 	uniform("u_View", camera->getView());
 
 	uniform("u_Projection", screenSize->getPerspective());
 
-	uniform(XgConstant::UNIFORM_TRANSFORM, transform.getTransformMatrix());
+	//uniform(XgConstant::UNIFORM_TRANSFORM, transform.getTransformMatrix());
 }

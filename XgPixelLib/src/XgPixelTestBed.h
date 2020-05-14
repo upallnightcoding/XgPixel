@@ -11,5 +11,6 @@ public:
 public:
 	static XgPaper *characterAttack();
 	static XgPaper *characterIdle();
+	static XgPaper *characterTwoIdle();
 };
 

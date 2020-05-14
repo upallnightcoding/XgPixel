@@ -77,12 +77,18 @@ void XgShader::uniform(std::string name, glm::mat4 value)
 	glUniformMatrix4fv(location, 1, GL_FALSE, value_ptr(value));
 }
 
+/*****************************************************************************
+uniform() -
+*****************************************************************************/
 void XgShader::uniform(std::string name, int value)
 {
 	int location = glGetUniformLocation(shaderProgram, name.c_str());
 	glUniform1i(location, value);
 }
 
+/*****************************************************************************
+uniform() -
+*****************************************************************************/
 void XgShader::uniform(std::string name, float value)
 {
 	int location = glGetUniformLocation(shaderProgram, name.c_str());

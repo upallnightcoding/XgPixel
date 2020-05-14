@@ -3,12 +3,9 @@
 
 XgFlipBook::XgFlipBook(float speed)
 {
-	this->xScale = 1.0;
-	this->yScale = 1.0;
-
 	this->speed = speed;
 
-	flipBookId = new int();
+	spriteId = new int();
 }
 
 XgFlipBook::~XgFlipBook()
@@ -20,7 +17,7 @@ setId() -
 *****************************************************************************/
 void XgFlipBook::setId(int flipBookId)
 {
-	*(this->flipBookId) = flipBookId;
+	*(this->spriteId) = flipBookId;
 }
 
 /*****************************************************************************
@@ -28,33 +25,9 @@ getId() -
 *****************************************************************************/
 int *XgFlipBook::getId()
 {
-	return(flipBookId);
+	return(spriteId);
 }
 
-/*****************************************************************************
-setScale() -
-*****************************************************************************/
-void XgFlipBook::setScale(float value)
-{
-	setScale(value, value);
-}
-
-/*****************************************************************************
-setScale() -
-*****************************************************************************/
-void XgFlipBook::setScale(float xScale, float yScale)
-{
-	this->xScale *= xScale;
-	this->yScale *= yScale;
-}
-
-/*****************************************************************************
-setScale() -
-*****************************************************************************/
-void XgFlipBook::setScale(XgTransform *transform)
-{
-	return(transform->scale(xScale, yScale));
-}
 
 /*****************************************************************************
 add() -
@@ -62,7 +35,7 @@ add() -
 void XgFlipBook::add(XgSprite *sprite)
 {
 	if (sprite != NULL) {
-		flipBookList.push_back(sprite);
+		spriteList.push_back(sprite);
 	}
 }
 
@@ -71,11 +44,11 @@ create() -
 *****************************************************************************/
 void XgFlipBook::create()
 {
-	for (auto sprite : flipBookList) {
+	for (auto sprite : spriteList) {
 		sprite->create();
 	}
 
-	nSprites = flipBookList.size();
+	nSprites = spriteList.size();
 	currentSprite = 0;
 
 	animationSpeed = 60 / speed;
@@ -89,7 +62,20 @@ drawn with the current shader.
 *****************************************************************************/
 void XgFlipBook::draw()
 {
-	flipBookList.at(currentSprite)->draw();
+	spriteList.at(currentSprite)->draw();
+}
+
+void XgFlipBook::bindVao()
+{
+	spriteList.at(currentSprite)->bindVao();
+}
+
+/*****************************************************************************
+worldCord() -
+*****************************************************************************/
+void XgFlipBook::worldCord(XgTransform &transform)
+{
+	spriteList.at(currentSprite)->worldCord(transform);
 }
 
 /*****************************************************************************
@@ -97,7 +83,7 @@ getHeightWidthRatio() -
 *****************************************************************************/
 float XgFlipBook::getHeightWidthRatio()
 {
-	return(flipBookList.at(currentSprite)->getHeightWidthRatio());
+	return(spriteList.at(currentSprite)->getHeightWidthRatio());
 }
 
 /*****************************************************************************
@@ -105,7 +91,7 @@ collision() -
 *****************************************************************************/
 void XgFlipBook::collision()
 {
-	flipBookList.at(currentSprite)->collision();
+	spriteList.at(currentSprite)->collision();
 }
 
 /*****************************************************************************

@@ -1,6 +1,7 @@
 #pragma once
 #include "XgShader.h"
 #include "XgCamera.h"
+#include "XgFlipBook.h"
 
 class XgShaderObject :
 	public XgShader
@@ -10,6 +11,11 @@ public:
 	virtual ~XgShaderObject();
 
 public:
-	virtual void apply(XgCamera *camera, XgScreenSize *screenSize, XgTransform &transform);
+	virtual void apply(
+		XgFlipBook *flipBook, 
+		XgCamera *camera, 
+		XgScreenSize *screenSize, 
+		XgTransform &transform
+	);
 };
 

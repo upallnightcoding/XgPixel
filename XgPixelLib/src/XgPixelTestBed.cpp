@@ -26,10 +26,10 @@ XgPaper *XgPixelTestBed::characterIdle()
 	std::string IDLE_STATE = "IDLE";
 
 	XgBackGround *bg = new XgBackGround("BG.png");
-	bg->setScale(5.0);
+	bg->setScale(5.0, 5.0);
 
+	//XgFlipBook *idleFlipBook = new XgFlipBook(1.0f);
 	XgFlipBook *idleFlipBook = new XgFlipBook(30.0f);
-	idleFlipBook->setScale(0.5f, 0.8f);
 	idleFlipBook->add(new XgSprite("Idle__000.png"));
 	idleFlipBook->add(new XgSprite("Idle__001.png"));
 	idleFlipBook->add(new XgSprite("Idle__002.png"));
@@ -48,6 +48,8 @@ XgPaper *XgPixelTestBed::characterIdle()
 	framework->add(idleState);
 
 	XgCharacter *character = new XgCharacter();
+	character->setScale(0.25f, 0.25f);
+	//character->setScale(1.0f, 1.0f);
 	character->add(framework);
 	character->add(idleFlipBook);
 
@@ -55,6 +57,72 @@ XgPaper *XgPixelTestBed::characterIdle()
 	paper->add(character);
 	//paper->add(bg);				// Background has to be last character added
 	
+	return(paper);
+}
+
+XgPaper *XgPixelTestBed::characterTwoIdle()
+{
+	std::string IDLE_STATE = "IDLE";
+
+	XgBackGround *bg = new XgBackGround("BG.png");
+	bg->setScale(5.0, 5.0);
+
+	//XgFlipBook *idleFlipBook = new XgFlipBook(1.0f);
+	XgFlipBook *idleFlipBookR = new XgFlipBook(30.0f);
+	idleFlipBookR->add(new XgSprite("Idle__000.png"));
+	idleFlipBookR->add(new XgSprite("Idle__001.png"));
+	idleFlipBookR->add(new XgSprite("Idle__002.png"));
+	idleFlipBookR->add(new XgSprite("Idle__003.png"));
+	idleFlipBookR->add(new XgSprite("Idle__004.png"));
+	idleFlipBookR->add(new XgSprite("Idle__005.png"));
+	idleFlipBookR->add(new XgSprite("Idle__006.png"));
+	idleFlipBookR->add(new XgSprite("Idle__007.png"));
+	idleFlipBookR->add(new XgSprite("Idle__008.png"));
+	idleFlipBookR->add(new XgSprite("Idle__009.png"));
+
+	XgFlipBook *idleFlipBookL = new XgFlipBook(30.0f);
+	idleFlipBookL->add(new XgSprite("Idle__000.png"));
+	idleFlipBookL->add(new XgSprite("Idle__001.png"));
+	idleFlipBookL->add(new XgSprite("Idle__002.png"));
+	idleFlipBookL->add(new XgSprite("Idle__003.png"));
+	idleFlipBookL->add(new XgSprite("Idle__004.png"));
+	idleFlipBookL->add(new XgSprite("Idle__005.png"));
+	idleFlipBookL->add(new XgSprite("Idle__006.png"));
+	idleFlipBookL->add(new XgSprite("Idle__007.png"));
+	idleFlipBookL->add(new XgSprite("Idle__008.png"));
+	idleFlipBookL->add(new XgSprite("Idle__009.png"));
+
+	XgState *idleStateR = new XgState(IDLE_STATE);
+	idleStateR->add(new XgActionChangeAnimation(idleFlipBookR));
+	idleStateR->add(new XgActionSetDirection(1.0, 0.0, 0.0));
+	idleStateR->add(new XgActionMove(0.001f));
+
+	XgState *idleStateL = new XgState(IDLE_STATE);
+	idleStateL->add(new XgActionChangeAnimation(idleFlipBookL));
+	idleStateL->add(new XgActionSetDirection(-1.0, 0.0, 0.0));
+	idleStateL->add(new XgActionMove(0.001f));
+
+	XgFramework *frameworkR = new XgFramework();
+	frameworkR->add(idleStateR);
+
+	XgFramework *frameworkL = new XgFramework();
+	frameworkL->add(idleStateL);
+
+	XgCharacter *characterL = new XgCharacter();
+	characterL->setScale(0.25f, 0.25f);
+	characterL->add(frameworkL);
+	characterL->add(idleFlipBookL);
+
+	XgCharacter *characterR = new XgCharacter();
+	characterR->setScale(0.25f, 0.25f);
+	characterR->add(frameworkR);
+	characterR->add(idleFlipBookR);
+
+	XgPaper *paper = new XgPaper();
+	paper->add(characterR);
+	paper->add(characterL);
+	paper->add(bg);
+
 	return(paper);
 }
 
@@ -77,7 +145,6 @@ XgPaper *XgPixelTestBed::characterAttack()
 	attackFlipBook->add(new XgSprite("Attack__009.png"));
 
 	XgFlipBook *idleFlipBook = new XgFlipBook(30.0f);
-	idleFlipBook->setScale(0.5f, 0.8f);
 	idleFlipBook->add(new XgSprite("Idle__000.png"));
 	idleFlipBook->add(new XgSprite("Idle__001.png"));
 	idleFlipBook->add(new XgSprite("Idle__002.png"));
@@ -111,6 +178,7 @@ XgPaper *XgPixelTestBed::characterAttack()
 	framework->add(idleState);
 
 	XgCharacter *character = new XgCharacter();
+	character->setScale(0.5f, 0.8f);
 	character->add(framework);
 	character->add(attackFlipBook);
 	character->add(idleFlipBook);

@@ -20,6 +20,18 @@ XgCharacter::~XgCharacter()
 	if (framework != NULL) {
 		delete framework;
 	}
+
+	delete shaderObject;
+
+	delete collisionShader;
+}
+
+/*****************************************************************************
+setScale() -
+*****************************************************************************/
+void XgCharacter::setScale(float xScale, float yScale)
+{
+	transform.scale(xScale, yScale);
 }
 
 /*****************************************************************************
@@ -75,17 +87,26 @@ void XgCharacter::render(XgCamera *camera, XgScreenSize *screenSize)
 	if (flipBook != XgConstant::NO_FLIP_BOOK) {
 		//flipBookList.at(flipBook)->setScale(&transform);
 
-		float hwRatio = flipBookList.at(flipBook)->getHeightWidthRatio();
+		//float hwRatio = flipBookList.at(flipBook)->getHeightWidthRatio();
+		//hwRatio = 0.75;
 
-		flipBookList.at(flipBook)->setScale(1.0, hwRatio);
+		//flipBookList.at(flipBook)->setScale(hwRatio, hwRatio);
 
-		collisionShader->apply(camera, screenSize, transform);
+		//flipBookItem->bindVoa();
 
-		flipBookList.at(flipBook)->collision();
+		XgFlipBook *flipBookItem = flipBookList.at(flipBook);
 
-		shaderObject->apply(camera, screenSize, transform);
+		//flipBookItem->bindVao();
 
-		flipBookList.at(flipBook)->draw();
+		collisionShader->apply(flipBookItem, camera, screenSize, transform);
+
+		flipBookItem->collision();
+
+		shaderObject->apply(flipBookItem, camera, screenSize, transform);
+
+		flipBookItem->draw();
+
+		//glBindVertexArray(0);
 	}
 }
 

@@ -31,6 +31,8 @@ public:
 
 	void sety(float value);
 
+	void debugIt();
+
 private:
 	glm::vec3 translateObj;
 	glm::vec3 rotateObj;
@@ -39,4 +41,9 @@ private:
 
 	glm::vec3 direction;
 };
+
+inline void XgTransform::debugIt()
+{
+	std::cout << "Scale: " << scaleObj.x << ":" << scaleObj.y << ":" << scaleObj.z << std::endl;
+}
 

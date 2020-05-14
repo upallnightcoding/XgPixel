@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Xg.h"
+#include "XgTransform.h"
 
 class XgSprite 
 {
@@ -16,6 +17,10 @@ public:
 	virtual void collision();
 
 	float getHeightWidthRatio();
+
+	void worldCord(XgTransform &transform);
+
+	void bindVao();
 
 private:
 	void dataFormat();
